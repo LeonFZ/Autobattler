@@ -5,6 +5,7 @@ var mouse_offset: Vector2 = Vector2.ZERO
 var cam
 
 func enter():
+	print("ENTER IDLE")
 	cam = get_viewport().get_camera_2d()
 	print(self, " : idle, position: ", character.global_position)
 	print(self, " : idle, position: ", character.position)
@@ -17,7 +18,9 @@ func exit():
 
 func process(_delta):
 	if selected:
-		follow_mouse()
+		transition.emit(self, "drag")
+		
+		
 
 func follow_mouse():
 	var current_mouse_world_pos = cam.get_global_mouse_position()
@@ -36,3 +39,4 @@ func _on_drag_and_drop_input_event(viewport, event, shape_idx):
 		else:
 			selected = false
 			print("Dragging stopped")
+			

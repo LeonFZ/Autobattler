@@ -16,7 +16,6 @@ func physics_process(_delta):
 
 func _on_personal_space_body_entered(body):
 	if body is team_character:
-		print("new target: ", body)
 		character.attacking = true
 		character.target = body
 		transition.emit(self, "attacking")

@@ -487,10 +487,11 @@ animatedSprite2D = NodePath("AnimatedSprite2D")
 metadata/_custom_type_script = "uid://b7ljpc2ei0hgp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_07wss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_qvrlb")
 animation = &"death"
 
@@ -508,9 +509,11 @@ script = ExtResource("5_41ben")
 script = ExtResource("6_k7x44")
 
 [node name="Drag and Drop" type="Area2D" parent="."]
+position = Vector2(-5.96046e-08, -2)
+scale = Vector2(0.751567, 0.747685)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drag and Drop"]
-position = Vector2(0.5, 5)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7x44")
 
 [connection signal="input_event" from="." to="state_machine/idle" method="_on_swordman_input_event"]

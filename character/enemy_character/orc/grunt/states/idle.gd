@@ -9,8 +9,6 @@ func exit():
 	pass
 	
 func process(_delta):
-	print(character.global_position)
-	
 	match character.get_direction_animation():
 		"side_right": 
 			animated_sprite.play("idle_side")
@@ -27,8 +25,6 @@ func process(_delta):
 			character.target = character.king
 		else:
 			Signalbus.who_is_the_king.emit()
-			
-	print(character.target)
 	
 func physics_process(_delta):
 	pass

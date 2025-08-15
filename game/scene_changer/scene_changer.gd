@@ -1,6 +1,5 @@
 extends CanvasLayer
 class_name SceneChanger
-var new_scene_path: String
 
 @onready var game_container: Node = $GameContainer
 @onready var anim_player: AnimationPlayer = $SceneChanger_Animation
@@ -8,11 +7,10 @@ var new_scene_path: String
 @onready var screen_blender: ColorRect = $ScreenBlender
 
 var game: Game
+var _scene_type: UTIL.GAME_SCENE
 
 func _ready():
 	screen_blender.modulate = Color(0,0,0,0)
-
-var _scene_type: UTIL.GAME_SCENE
 
 func change_to(scene_type: UTIL.GAME_SCENE):
 	_scene_type = scene_type
@@ -22,10 +20,9 @@ func change_to(scene_type: UTIL.GAME_SCENE):
 			
 	if anim_player.is_playing():
 		anim_player.stop()
-	anim_player.play("Fade in Out")
-	
-
 		
+	anim_player.play("Fade in Out")
+
 func _new_scene():
 	var path = UTIL.get_scene_path(_scene_type)
 	var packed_scene = load(path)
