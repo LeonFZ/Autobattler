@@ -1,0 +1,2 @@
+extends character
+class_name team_character

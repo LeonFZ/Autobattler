@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="arena_parameter" load_steps=2 format=3 uid="uid://bq2yu313walva"]
+
+[ext_resource type="Script" uid="uid://c72w7rr4i46ej" path="res://scenes/fight/params/arena_params.gd" id="1_cku6f"]
+
+[resource]
+script = ExtResource("1_cku6f")
+enemy_amount = 5
+metadata/_custom_type_script = "uid://c72w7rr4i46ej"

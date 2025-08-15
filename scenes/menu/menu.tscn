@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://ncwr77xpf7ph"]
+
+[ext_resource type="Script" uid="uid://cqjlpeimxtq8i" path="res://scenes/menu/menu.gd" id="1_j0t7f"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_j0t7f")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Level_Grass" type="ColorRect" parent="Level"]
+offset_left = -97.0
+offset_top = -14.0
+offset_right = -57.0
+offset_bottom = 26.0
+color = Color(2.88785e-07, 0.557419, 0.322445, 1)
+
+[node name="Level_Sand" type="ColorRect" parent="Level"]
+offset_left = -21.0
+offset_top = -76.0
+offset_right = 19.0
+offset_bottom = -36.0
+color = Color(0.620361, 0.624597, 0.100471, 1)
+
+[node name="Level_Dungeon" type="ColorRect" parent="Level"]
+offset_left = 47.0
+offset_top = -20.0
+offset_right = 87.0
+offset_bottom = 20.0
+color = Color(0.194349, 0.194349, 0.194349, 1)
+
+[node name="Level_Ocean" type="ColorRect" parent="Level"]
+offset_left = -23.0
+offset_top = 49.0
+offset_right = 17.0
+offset_bottom = 89.0
+color = Color(3.85046e-06, 0.875694, 0.790963, 1)
+
+[connection signal="gui_input" from="Level/Level_Grass" to="." method="_on_level_grass_gui_input"]
+[connection signal="gui_input" from="Level/Level_Sand" to="." method="_on_level_sand_gui_input"]
+[connection signal="gui_input" from="Level/Level_Dungeon" to="." method="_on_level_dungeon_gui_input"]
+[connection signal="gui_input" from="Level/Level_Ocean" to="." method="_on_level_ocean_gui_input"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://nviwimtoja2r"]
+
+[ext_resource type="PackedScene" uid="uid://dhjar1maqtywa" path="res://level/test_level.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://buae0m8iwyig1" path="res://game/game.gd" id="1_dxrkv"]
+[ext_resource type="Script" uid="uid://ctjsqkstum5nc" path="res://game/state_machine.gd" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://djb7icb7bxaek" path="res://game/start.gd" id="4_4fuuu"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("state_machine")]
+script = ExtResource("1_dxrkv")
+state_machine = NodePath("State_machine")
+
+[node name="Test_Level" parent="." instance=ExtResource("1_80nbo")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="State_machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_feb5d")
+current_state = NodePath("Start")
+
+[node name="Start" type="Node" parent="State_machine"]
+script = ExtResource("4_4fuuu")
